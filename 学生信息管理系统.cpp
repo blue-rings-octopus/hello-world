@@ -92,6 +92,7 @@ void Update(STUDENT stu[])
     {
         printf("Students do not exist\n");
         while(getchar()!='\n);
+    }
 }
 void Output(STUDENT stu[])
 {

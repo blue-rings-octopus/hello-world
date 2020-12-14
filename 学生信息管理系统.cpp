@@ -51,6 +51,8 @@ void Add(STUDENT stu[])
         scanf("%s%d%d%d",stu[i].name,&stu[i].score[0],&stu[i].score[1],&stu[i].score[2]);
         printf("Add success\n");
     }
+    else
+        while(getchar()!='\n);
 }
 void Delete(STUDENT stu[])
 {
@@ -87,7 +89,9 @@ void Update(STUDENT stu[])
         printf("Update success\n");
     }
     else
+    {
         printf("Students do not exist\n");
+        while(getchar()!='\n);
 }
 void Output(STUDENT stu[])
 {

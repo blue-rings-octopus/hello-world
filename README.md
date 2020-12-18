@@ -28,6 +28,7 @@ int main()
 
 输入样例：
 You are great
+
 输出样例：
 You
 are
@@ -35,32 +36,30 @@ great
 
 C (gcc 6.5.0)
 
-#include<string.h>
+    #include<string.h>
+    int getString( char * source , char *strPtr[] )
 
-
-int getString( char * source , char *strPtr[] )
-
-{
-    int i,j=1,num=0,size;
-    
-    size=strlen(source);
-    strPtr[0]=source;
-    for(i=0;i<size;i++)
-        if(*(source+i)==' ')
-        {
-            *(source+i)='\0';
-            if(*(source+i+1)!=' ')
-            {
-                strPtr[j]=source+i+1;
-                num++;
-                j++;
-            }
-        }
-    if(*strPtr[0]=='\0')
     {
-        for(i=1;i<=num;i++)
-            strPtr[i-1]=strPtr[i];
-        num--;
+        int i,j=1,num=0,size;
+        
+        size=strlen(source);
+        strPtr[0]=source;
+        for(i=0;i<size;i++)
+            if(*(source+i)==' ')
+            {
+                *(source+i)='\0';
+                if(*(source+i+1)!=' ')
+                {
+                    strPtr[j]=source+i+1;
+                    num++;
+                    j++;
+                }
+            }
+        if(*strPtr[0]=='\0')
+        {
+            for(i=1;i<=num;i++)
+                strPtr[i-1]=strPtr[i];
+            num--;
+        }
+            return num+1;
     }
-        return num+1;
-}

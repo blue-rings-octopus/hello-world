@@ -34,8 +34,12 @@ are
 great
 
 C (gcc 6.5.0)
+
 #include<string.h>
+
+
 int getString( char * source , char *strPtr[] )
+
 {
     int i,j=1,num=0,size;
     

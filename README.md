@@ -3,28 +3,30 @@
 
 函数接口定义：
 函数原型如下：
-int getString( char * source , char *strPtr[] ) ;
+
+    int getString( char * source , char *strPtr[] ) ;
+    
 其中 source 和 strPtr 都是用户传入的参数。 source 为待处理字符串； strPtr 是保存各个单词开始位置的指针数组。函数返回值为单词的个数。
 
 裁判测试程序样例：
 函数被调用进行测试的例子如下：
-#include<stdio.h>
 
-int getString( char * source , char *strPtr[] ) ;
+    #include<stdio.h>
+    int getString( char * source , char *strPtr[] ) ;
 
-int main()
-{
-    char    str[100005];
-    char    *strPtr[1005]={0};
-    int        i, num ;
+    int main()
+    {
+        char    str[100005];
+        char    *strPtr[1005]={0};
+        int        i, num ;
 
-    gets(str);
-    num = getString( str , strPtr ) ;
-    for( i = 0 ; i < num ; i++ )
-        puts(strPtr[i]);
+        gets(str);
+        num = getString( str , strPtr ) ;
+        for( i = 0 ; i < num ; i++ )
+            puts(strPtr[i]);
 
-    return 0;    
-}
+        return 0;    
+    }
 
 输入样例：
 You are great
